@@ -7,9 +7,9 @@ function App() {
   const [ username,setUsername ] = useState(null);
   const [ roomid,setRoomid ] = useState(null);
   const loginAttempt = (e) => {
-      e.preventDefault();
-      socket.emit('login-attempt',{ username,roomid });
-      setState('chat');
+    e.preventDefault();
+    socket.emit('login-attempt',{ username,roomid });
+    setState('chat');
   }
   socket.off('entry').on('entry',(data)=>{
     if(data===username)
@@ -18,8 +18,21 @@ function App() {
     document.getElementById("entry").innerText=data+" Joined";
     setTimeout(()=>document.getElementById("entry").innerText='',4000);
   });
-
-
+  const sendMessage = async () => {
+    var msg = document.getElementById("msg").value;
+    if(msg!==""){
+      const messageData = {
+        room:roomid,
+        author:username,
+        message:msg,
+        time:
+          new Date(Date.now()).getHours() +
+          ":" +
+          new Date(Date.now()).getMinutes()
+      };
+      await socket.emit('message2server',messageData);
+    }
+  }
   if(state==='login'){
   return (
     <div className="App">
@@ -59,10 +72,8 @@ function App() {
           </div>
         </main>
         <div className="chat-form-container">
-          <form>
-            <input id="msg" type="text" placeholder="Enter Message" required autoComplete="off" />
-            <button className="btn">Send</button>
-          </form>
+          <input id="msg" type="text" placeholder="Enter Message" autoComplete="off" />
+          <button onClick={sendMessage} className="btn">Send</button>
         </div>
       </div>
     </div>

@@ -15,6 +15,9 @@ io.on('connection',(socket)=>{
         socket.join(data.roomid);
         io.sockets.in(data.roomid).emit('entry',data.username);
     })
+    socket.on('message2server',(data)=>{
+        socket.emit('message',data);
+    });
     socket.on('disconnect',()=>{
         console.log('user left');
     })
