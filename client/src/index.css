@@ -91,7 +91,7 @@ a {
     overflow-y: scroll;
 }
 
-.chat-messages .message {
+.chat-messages .mymessage {
     padding: 10px;
     margin-bottom: 15px;
     background-color: var(--light-color);
@@ -99,7 +99,7 @@ a {
     overflow-wrap: break-word;
 }
 
-.chat-messages .message .meta {
+.chat-messages .mymessage .meta {
     font-size: 15px;
     font-weight: bold;
     color: var(--dark-color-b);
@@ -107,7 +107,27 @@ a {
     margin-bottom: 7px;
 }
 
-.chat-messages .message .meta span {
+.chat-messages .mymessage .meta span {
+    color: #777;
+}
+
+.chat-messages .notmymessage {
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: var(--light-color);
+    border-radius: 5px;
+    overflow-wrap: break-word;
+}
+
+.chat-messages .notmymessage .meta {
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--dark-color-b);
+    opacity: 0.7;
+    margin-bottom: 7px;
+}
+
+.chat-messages .notmymessage .meta span {
     color: #777;
 }
 

@@ -1,6 +1,35 @@
-import { useState,useEffect }from 'react';
+import { useState }from 'react';
 import io from 'socket.io-client';
 const socket = io.connect('http://localhost:5000');
+
+function outputMyMessage(message) {
+  const div = document.createElement('div');
+  div.classList.add('mymessage');
+  const p = document.createElement('p');
+  p.classList.add('meta');
+  p.innerText = message.author;
+  p.innerHTML += `<span>${message.time}</span>`;
+  div.appendChild(p);
+  const para = document.createElement('p');
+  para.classList.add('text');
+  para.innerText = message.message;
+  div.appendChild(para);
+  document.querySelector('.chat-messages').appendChild(div);
+}
+function outputNotMyMessage(message) {
+  const div = document.createElement('div');
+  div.classList.add('notmymessage');
+  const p = document.createElement('p');
+  p.classList.add('meta');
+  p.innerText = message.author;
+  p.innerHTML += `<span>${message.time}</span>`;
+  div.appendChild(p);
+  const para = document.createElement('p');
+  para.classList.add('text');
+  para.innerText = message.message;
+  div.appendChild(para);
+  document.querySelector('.chat-messages').appendChild(div);
+}
 
 function App() {
   const [ state,setState ] = useState('login');
@@ -32,7 +61,15 @@ function App() {
       };
       await socket.emit('message2server',messageData);
     }
+    document.getElementById("msg").value="";
   }
+  socket.off('message').on('message',(data)=>{
+    console.log(data);
+    if(data.author===username)
+    outputMyMessage(data);
+    else
+    outputNotMyMessage(data);
+  })
   if(state==='login'){
   return (
     <div className="App">
