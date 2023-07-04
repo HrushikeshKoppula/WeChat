@@ -103,6 +103,7 @@ function App() {
         </header>
         <main className="chat-main">
           <div className="chat-sidebar">
+            <i class='fas fa-users'></i>
             <h3>Groups</h3>
             <ul id="rooms" />
           </div>
@@ -110,9 +111,9 @@ function App() {
             <p id="entry"></p>
           </div>
         </main>
-        <div className="chat-form-container">
+        <div className="chatbox">
           <input id="msg" type="text" placeholder="Enter Message" autoComplete="off" />
-          <button onClick={sendMessage} className="btn">Send</button>
+          <button onClick={sendMessage} className="btn">Send &#9658;</button>
         </div>
       </div>
     </div>
