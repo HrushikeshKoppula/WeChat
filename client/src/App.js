@@ -69,6 +69,8 @@ function App() {
     outputMyMessage(data);
     else
     outputNotMyMessage(data);
+    const chatMessages = document.querySelector('.chat-messages');
+    chatMessages.scrollTop = chatMessages.scrollHeight;
   })
   if(state==='login'){
   return (
