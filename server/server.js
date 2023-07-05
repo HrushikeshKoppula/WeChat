@@ -18,6 +18,9 @@ io.on('connection',(socket)=>{
     socket.on('message2server',(data)=>{
         io.sockets.in(data.room).emit('message',data);
     });
+    socket.on('leave-attempt',(data)=>{
+        socket.leave(data);
+    })
     socket.on('disconnect',()=>{
         console.log('user left');
     })

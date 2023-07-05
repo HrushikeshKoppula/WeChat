@@ -72,6 +72,12 @@ function App() {
     const chatMessages = document.querySelector('.chat-messages');
     chatMessages.scrollTop = chatMessages.scrollHeight;
   })
+  const leaveRoom = () => {
+    socket.emit('leave-attempt',roomid);
+    setState('login');
+    setUsername(null);
+    setRoomid(null);
+  }
   if(state==='login'){
   return (
     <div className="App">
@@ -99,7 +105,7 @@ function App() {
       <div className="chat">
         <header className="chat-header">
           <h1> &lt;3 WeChat</h1>
-          <button className='btn'>Leave Room</button>
+          <button onClick={leaveRoom} className='btn'>Leave Room</button>
         </header>
         <main className="chat-main">
           <div className="chat-sidebar">
