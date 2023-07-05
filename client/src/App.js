@@ -103,7 +103,6 @@ function App() {
         </header>
         <main className="chat-main">
           <div className="chat-sidebar">
-            <i>&#xf0c0;</i>
             <h3>Room Name :</h3>
             <h2 id>{roomid}</h2>
             <ul id="rooms" />
@@ -114,7 +113,7 @@ function App() {
         </main>
         <div className="chatbox">
           <input id="msg" type="text" placeholder="Enter Message" autoComplete="off" />
-          <button onClick={sendMessage} className="btn">Send &#9658;</button>
+          <button onClick={sendMessage} className="btn">Send <i className="fa fa-paper-plane-o"></i></button>
         </div>
       </div>
     </div>
