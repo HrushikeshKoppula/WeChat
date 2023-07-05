@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 :root {
-    --dark-color-a: #667aff;
-    --dark-color-b: #7386ff;
-    --light-color: #e6e9ff;
+    --color-1: #667aff;
+    --color-2: #7386ff;
+    --color-3: #e6e9ff;
     --success-color: #5cb85c;
     --error-color: #d9534f;
 }
@@ -17,7 +17,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
-    background: var(--light-color);
+    background: var(--color-3);
 }
 
 ul {
@@ -31,8 +31,8 @@ a {
 .btn {
     cursor: pointer;
     padding: 9px 15px;
-    background: var(--light-color);
-    color: var(--dark-color-a);
+    background: var(--color-3);
+    color: var(--color-1);
     border: 0;
     font-size: 17px;
 }
@@ -49,7 +49,7 @@ a {
 }
 
 .chat-header {
-    background: var(--dark-color-a);
+    background: var(--color-1);
     color: #fff;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -65,7 +65,7 @@ a {
 }
 
 .chat-sidebar {
-    background: var(--dark-color-b);
+    background: var(--color-2);
     color: #fff;
     padding: 20px 20px 60px;
     overflow-y: scroll;
@@ -95,7 +95,7 @@ a {
 .chat-messages .mymessage {
     padding: 10px;
     margin-bottom: 15px;
-    background-color: var(--light-color);
+    background-color: var(--color-3);
     border-radius: 5px;
     overflow-wrap: break-word;
 }
@@ -103,7 +103,7 @@ a {
 .chat-messages .mymessage .meta {
     font-size: 15px;
     font-weight: bold;
-    color: var(--dark-color-b);
+    color: var(--color-2);
     opacity: 0.7;
     margin-bottom: 7px;
 }
@@ -115,7 +115,7 @@ a {
 .chat-messages .notmymessage {
     padding: 10px;
     margin-bottom: 15px;
-    background-color: var(--dark-color-a);
+    background-color: var(--color-1);
     border-radius: 5px;
     overflow-wrap: break-word;
 }
@@ -123,7 +123,7 @@ a {
 .chat-messages .notmymessage .meta {
     font-size: 15px;
     font-weight: bold;
-    color: var(--light-color);
+    color: var(--color-3);
     opacity: 0.7;
     margin-bottom: 7px;
 }
@@ -134,7 +134,7 @@ a {
 
 .chatbox {
     padding: 20px 30px;
-    background-color: var(--dark-color-a);
+    background-color: var(--color-1);
     width: 100%;
 }
 
@@ -156,14 +156,14 @@ a {
 .join-header {
     text-align: center;
     padding: 20px;
-    background: var(--dark-color-a);
+    background: var(--color-1);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
 
 .join-main {
     padding: 30px 40px;
-    background: var(--dark-color-b);
+    background: var(--color-2);
 }
 
 .join-main p {
