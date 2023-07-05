@@ -103,8 +103,9 @@ function App() {
         </header>
         <main className="chat-main">
           <div className="chat-sidebar">
-            <i class='fas fa-users'></i>
-            <h3>Groups</h3>
+            <i>&#xf0c0;</i>
+            <h3>Room Name :</h3>
+            <h2 id>{roomid}</h2>
             <ul id="rooms" />
           </div>
           <div className="chat-messages">
